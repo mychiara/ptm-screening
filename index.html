@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Dini Penyakit Tidak Menular</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://satusehat.kemkes.go.id/assets/img/logo.png" alt="Logo Kemenkes" class="logo">
+            <h1>Deteksi Dini Penyakit Tidak Menular</h1>
+            <p>Berdasarkan standar Kementerian Kesehatan RI</p>
+        </header>
+
+        <main>
+            <section id="form-section">
+                <form id="screening-form">
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap:</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usia">Usia (tahun):</label>
+                        <input type="number" id="usia" name="usia" min="15" max="120" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis-kelamin">Jenis Kelamin:</label>
+                        <select id="jenis-kelamin" name="jenis-kelamin" required>
+                            <option value="">Pilih</option>
+                            <option value="L">Laki-laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                    </div>
+
+                    <!-- Pertanyaan Skrining PTM -->
+                    <div class="question-group">
+                        <h3>Riwayat Kesehatan</h3>
+                        
+                        <div class="form-group">
+                            <label>1. Apakah Anda merokok?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="merokok" value="ya"> Ya</label>
+                                <label><input type="radio" name="merokok" value="tidak"> Tidak</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>2. Aktivitas fisik (olahraga minimal 30 menit/hari):</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="aktivitas" value="tidak"> Tidak pernah</label>
+                                <label><input type="radio" name="aktivitas" value="jarang"> <3x/minggu</label>
+                                <label><input type="radio" name="aktivitas" value="sering"> ≥3x/minggu</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>3. Konsumsi buah dan sayur (≥5 porsi/hari):</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="sayur-buah" value="ya"> Ya</label>
+                                <label><input type="radio" name="sayur-buah" value="tidak"> Tidak</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>4. Riwayat tekanan darah tinggi?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="hipertensi" value="ya"> Ya</label>
+                                <label><input type="radio" name="hipertensi" value="tidak"> Tidak</label>
+                                <label><input type="radio" name="hipertensi" value="tidak-tahu"> Tidak tahu</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>5. Riwayat gula darah tinggi?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="diabetes" value="ya"> Ya</label>
+                                <label><input type="radio" name="diabetes" value="tidak"> Tidak</label>
+                                <label><input type="radio" name="diabetes" value="tidak-tahu"> Tidak tahu</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Hitung Skor Risiko</button>
+                </form>
+            </section>
+
+            <section id="result-section" class="hidden">
+                <h2>Hasil Skrining</h2>
+                <div id="result-content"></div>
+                <button id="back-btn" class="submit-btn">Kembali ke Form</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 - Sistem Deteksi Dini PTM berdasarkan standar Kemenkes RI</p>
+            <p>Referensi: <a href="https://satusehat.kemkes.go.id/platform/docs/id/interoperability/skrining-ptm/" target="_blank">Standar Skrining PTM Kemenkes</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
